@@ -24,7 +24,7 @@ commands = [                                                                    
 @client.event
 async def on_message(message):                                                          # triggers on any message received
     if (message.author == client.user): return                                          # filter for messages by the bot
-    if (message.type != discord.MessageType.default): return                                    # we only want to process regular messages
+    if (message.type != discord.MessageType.default): return                            # we only want to process regular messages
     for cmdCommand in commands:                                                         # enumerate through our list of commands
         if (COMMAND_PREFIX + cmdCommand.strTrigger.lower() in message.content.lower()): # if the trigger phrase is in the message,
             if (cmdCommand.stlCommandType == Style.TEXT):                               # and the command type is correct, 
